@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 8</title>
+  <style type="text/css">
+
+  </style>
+  <script>
+    window.onload = function () {
+      var controladorBucle = true;
+      var sumaAcumulada = 0;
+      var contadorDeNum= 0;
+      var media=0;
+      do {
+        var entrada = prompt("Escribe un número", 0);
+        //document.write("El número introducido fue el "+entrada);
+        if (isNaN(entrada)) { //no es número
+          alert("Debes introducir números positivos.");
+        } else { //es número
+          if (entrada < 0) {
+            alert("Introduzca sólo números positivos.\n\n"+
+            "Suma       acumulada = " + sumaAcumulada
+            +".\n"+"La media es "+media.toFixed(2)
+            );
+            //hola
+            controladorBucle = false;
+          } else {
+            //realizar los cálculos
+            contadorDeNum++;
+            sumaAcumulada = sumaAcumulada + parseFloat(entrada);
+            media = sumaAcumulada/contadorDeNum;
+            alert("El último número introducido fue el " + entrada + ".\n"+"Suma acumulada = " + sumaAcumulada+".\n"+"La media es "+media.toFixed(2));
+          }
+        }
+      } while (controladorBucle);
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
